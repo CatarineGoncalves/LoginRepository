@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style2.css">
+    <title>Document</title>
+</head>
+
+<style>
+    .wavesContainer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .loginContainer {
+        background-color: #fff;
+        width: 360px;
+        height: 33vh;
+        position: absolute;
+        bottom: 30%;
+        z-index: 1;
+        border-radius: 10px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .loginBox {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .loginBox div:nth-child(1) {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+    .loginBox div:nth-child(2) {
+        margin-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 445px) {
+        .loginContainer {
+            width: 90vw;
+
+        }
+    }
+</style>
+
+<body>
+
+    <div class="loginContainer">
+        <div class="loginBox">
+            <div class="input-container">
+                <input type="email" name="email" id="email" placeholder=" " aria-label="Digite seu e-mail" required>
+                <label for="email">E-mail</label>
+            </div>
+            <div class="input-container">
+                <input type="password" name="password" id="password" placeholder=" " aria-label="Digite sua senha"
+                    required>
+                <label for="password">Senha</label>
+            </div>
+            <div>
+                
+                <button type="button" class="LoginButton effect effect-2" id="LoginButton" title="Login"><img src="./img/entrar (1).png" alt=""> Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wavesContainer">
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("LoginButton").onclick = () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            if (email === "" || password === "") {
+                alert("Não deve haver um campo nulo");
+            } else {
+                alert("Está Logado");
+            }
+        }
+    </script>
+</body>
+
+</html>
